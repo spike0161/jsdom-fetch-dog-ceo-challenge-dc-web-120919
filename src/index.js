@@ -5,22 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchDogsBreeds()
 
 
-
 })
 
 
-
-function fetchDogsSubBreeds(){
-  fetch("https://dog.ceo/api/breeds/list/all")
-    .then( response => response.json())
-    .then( data => {
-      debugger
-       renderBreed(Object.values(data.message))
-     })
+function changeBreedColor(e){
+  let clickedLi = e.target
+  clickedLi.style.color = "red"
+  // let breed = event.target
+  // breed.style = "color: red"
 
 }
-
-
 
 
 
@@ -50,11 +44,14 @@ function renderBreed(breed){
   breed.forEach(breed =>{
     let list = document.createElement('li')
     list.innerText = breed[0]
+    list.addEventListener('click', changeBreedColor)
+
     breed[1].forEach(subBreed =>{
       let subBreedUl = document.createElement('ul')
       let subBreedList = document.createElement('li')
       subBreedList.innerText = subBreed
-    
+      subBreedList.addEventListener('click', changeBreedColor)
+
       list.appendChild(subBreedUl)
       subBreedUl.appendChild(subBreedList)
     })

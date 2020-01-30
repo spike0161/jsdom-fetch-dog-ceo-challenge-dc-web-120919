@@ -24,9 +24,9 @@ const breedUrl = 'https://dog.ceo/api/breeds/list/all'
 ```
 
 After the first challenge is completed, add JavaScript so that:
-
+<!-- 
 - on page load, fetch all the dog breeds using the url above ⬆️
-- add the breeds to the page in an `<ul>` (take a look at the included `index.html`)
+- add the breeds to the page in an `<ul>` (take a look at the included `index.html`) -->
 
 ---
 
